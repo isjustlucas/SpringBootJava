@@ -125,7 +125,7 @@ hs_err_pid*
 
 ### Postman ###
 .postman/
-postman/
+postman
 
 ### Maven ###
 target/
