@@ -2,6 +2,8 @@ package com.udemy.course.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.udemy.course.entities.enums.OrderStatus;
 
@@ -11,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -26,6 +29,8 @@ public class Order implements Serializable {
     private User client;
 
     private Integer orderStatus;
+    @OneToMany(mappedBy = "id.order")
+    private Set<OrderItem> items = new HashSet<>();
 
     public Order() {
     }
@@ -35,6 +40,14 @@ public class Order implements Serializable {
         this.instant = instant;
         this.client = client;
         setOrderStatus(orderStatus);
+    }
+
+    public Set<OrderItem> getItems() {
+        return items;
+    }
+
+    public void setItems(Set<OrderItem> items) {
+        this.items = items;
     }
 
     public Long getId() {
