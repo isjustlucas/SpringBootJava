@@ -2,7 +2,6 @@ package com.udemy.course.entities.pk;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.udemy.course.entities.Order;
 import com.udemy.course.entities.Product;
 
@@ -12,7 +11,6 @@ import jakarta.persistence.ManyToOne;
 
 @Embeddable
 public class OrderItemPK implements Serializable{
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "order_id")
     private Order order;
