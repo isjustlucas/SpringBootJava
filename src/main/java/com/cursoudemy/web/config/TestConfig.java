@@ -14,7 +14,7 @@ import com.cursoudemy.web.repositories.UserRepository;
 @Profile("test")
 public class TestConfig implements CommandLineRunner{
 
-    @Autowired 
+    @Autowired
     private UserRepository userRepository;
 
     @Override
