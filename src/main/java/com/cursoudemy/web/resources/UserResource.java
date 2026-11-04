@@ -11,14 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cursoudemy.web.entities.User;
 import com.cursoudemy.web.services.UserService;
-import org.springframework.web.bind.annotation.RequestParam;
 
-
-@RestController 
+@RestController
 @RequestMapping(value = "/users")
 public class UserResource {
-    
-    @Autowired 
+
+    @Autowired
     private UserService service;
 
     @GetMapping
@@ -27,10 +25,11 @@ public class UserResource {
 
         return ResponseEntity.ok().body(list);
     }
+
     @GetMapping(value = "/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id) {
         User obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
-    
+
 }

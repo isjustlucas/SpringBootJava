@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import com.cursoudemy.web.entities.User;
 import com.cursoudemy.web.repositories.UserRepository;
 
-@Service 
+@Service
 public class UserService {
-    
-    @Autowired 
+
+    @Autowired
     private UserRepository repository;
 
     public List<User> findAll() {
