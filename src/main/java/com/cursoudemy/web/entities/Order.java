@@ -1,5 +1,6 @@
 package com.cursoudemy.web.entities;
 
+import java.io.Serializable;
 import java.time.Instant;
 
 import com.cursoudemy.web.entities.enums.OrderStatus;
@@ -15,7 +16,9 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_order")
-public class Order {
+public class Order implements Serializable {
+
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
